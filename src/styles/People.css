@@ -1,0 +1,291 @@
+/* People component styles */
+
+.people-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.people-form .inputfield {
+  width: 100%;
+  margin-top: 0;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  background: var(--input-bg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.people-form .inputfield:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: var(--card-bg);
+}
+
+.people-form .inputfield.input-error {
+  border-color: #ef4444;
+  background-color: #fee2e2;
+}
+
+.people-form .inputfield.edit-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.people-form .btn-add-person {
+  margin-top: 0;
+}
+
+.people-list {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.person-item {
+  display: flex;
+  padding: 9px;
+  align-items: center;
+  width: 90%;
+  gap: 1em;
+  border-radius: 2em;
+  animation: peopleSlideInUp 0.3s ease-out;
+  transition: all 0.2s ease;
+}
+
+.person-item:hover {
+  background-color: rgba(99, 102, 241, 0.05);
+  transform: translateX(4px);
+}
+
+.btn-add-person {
+  width: 100%;
+  padding: 12px;
+  margin-top: 0;
+  background: transparent;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-add-person:hover {
+  border-color: #6366f1;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.btn-add-person:active {
+  transform: scale(0.98);
+}
+
+.btn-clear {
+  padding: 10px 16px;
+  background: var(--card-bg);
+  border: 1.5px solid #fca5a5;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: #dc2626;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-clear:hover:not(:disabled) {
+  background: #fecaca;
+  border-color: #ef4444;
+}
+
+.btn-clear:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-delete {
+  background-color: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: #fecaca;
+  transform: scale(1.1);
+}
+
+.btn-delete:active {
+  animation: peopleShake 0.3s ease-in-out;
+}
+
+.btn-icon {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.125em;
+  margin-right: 6px;
+}
+
+.people-card .error-message {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+  animation: peopleSlideDown 0.2s ease-out;
+}
+
+.empty-state-people {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  animation: fadeInScale 0.4s ease-out;
+}
+
+.empty-state-people .empty-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.empty-state-people p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.empty-state-people .empty-state-hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+@keyframes peopleSlideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes peopleSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes peopleShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+[data-theme="dark"] .btn-clear {
+  color: #ffb3b3;
+  border-color: #704040;
+}
+
+[data-theme="dark"] .btn-clear:hover:not(:disabled) {
+  background: #663333;
+  border-color: #8b5555;
+}
+
+@media (max-width: 768px) {
+  .people-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .person-item {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .btn-add-person {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .btn-clear {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-add-person {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .people-card .error-message {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  .person-item {
+    padding: 6px;
+    gap: 8px;
+  }
+
+  .empty-state-people {
+    padding: 30px 16px;
+  }
+
+  .empty-state-people .empty-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+}

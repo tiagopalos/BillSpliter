@@ -1,0 +1,155 @@
+.expense-chart-container {
+  width: 100%;
+  padding: 20px 0;
+  background: var(--card-bg);
+}
+
+.chart-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.chart-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.chart-toggle-items {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-toggle-items:hover {
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+
+.chart-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(99, 102, 241, 0.02) 100%);
+  border: 2px dashed var(--border-color);
+}
+
+.expense-chart-container .recharts-pie .recharts-sector {
+  outline: none;
+}
+
+/* Legend list below pie – one row per item, no overlap */
+
+.chart-legend-list {
+  list-style: none;
+  padding: 0 12px;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-primary);
+  padding: 4px 0;
+}
+
+.chart-legend-swatch {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.chart-legend-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chart-legend-percent {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.chart-total {
+  text-align: center;
+  padding: 10px;
+  background: var(--input-bg);
+  border-radius: var(--radius-md);
+  margin-top: 15px;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .expense-chart-container {
+    padding: 10px 0;
+  }
+
+  .chart-title {
+    font-size: 1em;
+    margin-bottom: 12px;
+  }
+
+  .chart-empty {
+    padding: 50px 16px;
+    min-height: 200px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+  }
+
+  .chart-total {
+    padding: 8px;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expense-chart-container {
+    padding: 8px 0;
+  }
+
+  .chart-title {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+  }
+
+  .chart-empty {
+    padding: 40px 12px;
+    min-height: 150px;
+    font-size: 12px;
+  }
+
+  .chart-total {
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+}

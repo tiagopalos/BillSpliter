@@ -1,0 +1,250 @@
+
+.add-item-group {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.add-item-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.add-item-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+  margin-bottom: 16px;
+}
+
+.price-input-wrapper {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 4px;
+}
+
+.form-label {
+  margin-top: 10px;
+  display: block;
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  text-transform: none;
+}
+
+.form-select {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--input-bg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+
+.bill-details .inputfield,
+.bill-details .inputfieldNumber {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: var(--input-bg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.bill-details .inputfield:focus,
+.bill-details .inputfieldNumber:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: var(--card-bg);
+}
+
+.bill-details .inputfield.input-error,
+.bill-details .inputfieldNumber.input-error {
+  border-color: #ef4444;
+  background-color: #fee2e2;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;  
+  padding: 0 2em;
+  background: var(--primary-dark);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  height: 2.5em;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bill-details .error-message {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+  animation: billDetailsSlideDown 0.2s ease-out;
+}
+
+@keyframes billDetailsSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Undo / Redo */
+.undo-redo-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-undo,
+.btn-redo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bill-details .btn-undo .btn-icon,
+.bill-details .btn-redo .btn-icon {
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.btn-undo:hover:not(:disabled),
+.btn-redo:hover:not(:disabled) {
+  background: var(--input-bg);
+  border-color: var(--primary-dark);
+  color: var(--text-primary);
+}
+
+.btn-undo:disabled,
+.btn-redo:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+[data-theme="dark"] .btn-undo:hover:not(:disabled),
+[data-theme="dark"] .btn-redo:hover:not(:disabled) {
+  background: #606070;
+  border-color: #7070a0;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .add-item-row {
+    flex-direction: column;
+  }
+
+  .add-item-actions {
+    margin-top: 12px;
+  }
+
+  .undo-redo-buttons {
+    flex-wrap: wrap;
+  }
+
+  .bill-details .inputfield {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .bill-details .inputfieldNumber {
+    width: 100%;
+  }
+
+  .btn-undo,
+  .btn-redo {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .undo-redo-buttons {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-label {
+    font-size: 0.9em;
+    margin-bottom: 6px;
+  }
+
+  .bill-details .inputfield,
+  .bill-details .inputfieldNumber {
+    padding: 10px 12px;
+  }
+
+  .bill-details .error-message {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  .undo-redo-buttons {
+    gap: 6px;
+  }
+
+  .btn-undo,
+  .btn-redo {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}

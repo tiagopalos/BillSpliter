@@ -1,0 +1,68 @@
+/* Header component styles */
+
+.app-header {
+  text-align: center;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.app-header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.app-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  text-align: center;
+  margin: 0;
+}
+
+.app-subtitle {
+  color: var(--text-primary);
+  margin-top: 0.5em;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 1.5em;
+  text-align: center;
+  margin: 0.5em auto 1.5em;
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 20px;
+    letter-spacing: 0;
+  }
+
+  .app-subtitle {
+    font-size: 0.9em;
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .app-title {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+}

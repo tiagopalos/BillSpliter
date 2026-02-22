@@ -1,0 +1,137 @@
+/* PerPerson component styles */
+
+.per-person .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.per-person .title-group {
+  margin-bottom: 5.5em;
+}
+
+.per-person .export-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.per-person .export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.per-person .export-btn:hover:not(:disabled) {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+  background: var(--input-bg);
+}
+
+.per-person .export-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.per-person .empty-state {
+  text-align: center;
+  margin: 45px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.per-person .total {
+  margin-top: 1em;
+  font-size: larger;
+}
+
+.person-breakdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.person-breakdown-item {
+  padding: 8px;
+  animation: perPersonSlideInUp 0.3s ease-out;
+}
+
+.person-breakdown-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.person-breakdown-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.person-breakdown-details {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+@keyframes perPersonSlideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .per-person .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .per-person .title-group {
+    margin-bottom: 2rem;
+  }
+
+  .per-person .export-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .per-person .export-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .per-person .total {
+    font-size: 1em;
+    margin-top: 0.8em;
+  }
+
+  .per-person .export-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .per-person .export-btn {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+  }
+}

@@ -1,0 +1,97 @@
+/* Summary component styles */
+
+.summary .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.summary .title-group {
+  margin-bottom: 5.5em;
+}
+
+.summary .export-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.summary .export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.summary .export-btn:hover:not(:disabled) {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+  background: var(--input-bg);
+}
+
+.summary .export-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.summary .empty-state {
+  text-align: center;
+  margin: 45px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.summary .total {
+  margin-top: 1em;
+  font-size: larger;
+}
+
+@media (max-width: 768px) {
+  .summary .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .summary .title-group {
+    margin-bottom: 2rem;
+  }
+
+  .summary .export-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .summary .export-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary .total {
+    font-size: 1em;
+    margin-top: 0.8em;
+  }
+
+  .summary .export-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .summary .export-btn {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+  }
+}
