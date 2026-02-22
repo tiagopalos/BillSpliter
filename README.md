@@ -1,18 +1,18 @@
 # Bill Splitter
---
+
 Bill Splitter is a intuitive web application for splitting bills
---
+
 
 # Features
---
+
 ##  Bill Management
---
+
 Multi-Currency Support
 Add Bill Items: Easily add items with custom names and prices
 Undo/Redo Functionality
---
+
 ## People Management
---
+
 Add as many people as needed to split the bill
 Dynamic List: Easy-to-manage participant list with individual delete options
 Clear All: Quick reset
