@@ -64,3 +64,7 @@ PDF and PNG Export
   - jspdf: 2.5.1
   - html2canvas: 1.4.1
   - recharts: 2.10.0
+
+## Requiemnts :
+
+npm install 
