@@ -1,5 +1,6 @@
 import { calculatePerPerson, formatCurrency} from "../../utils/calculations";
 import "../../styles/PerPerson.css";
+import { ASSET_PATHS } from "../../constants/assets";
 import { handleExport } from "../../utils/exportHandler";
 
 export default function PerPerson({ items, numberOfPeople, selectedCurrency, showToast }) {
@@ -11,7 +12,7 @@ export default function PerPerson({ items, numberOfPeople, selectedCurrency, sho
         <div className="per-person">
             <div className="header">
                 <div className="title-group">
-                    <h3 className="card-title"><img src="src/assets/user.svg" alt="user" className="logo" />Per Person</h3>
+                    <h3 className="card-title"><img src={ASSET_PATHS.USER_ICON}alt="user" className="logo" />Per Person</h3>
                     <p className="card-subtitle">Split equally among {numberOfPeople} people</p>
                 </div>
                 <div className="export-buttons">
